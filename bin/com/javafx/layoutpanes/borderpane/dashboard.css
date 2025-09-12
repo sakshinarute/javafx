@@ -1,0 +1,46 @@
+/* Root background */
+.dashboard-root {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Top title bar */
+.title-bar {
+    -fx-background-color: #2196f3;
+    -fx-padding: 10;
+}
+.title-bar .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+/* Left menu bar */
+.menu-bar {
+    -fx-background-color: #eeeeee;
+    -fx-padding: 10;
+}
+.menu-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 5 15 5 15;
+}
+.menu-button:hover {
+    -fx-background-color: #1976d2;
+}
+
+/* Center content */
+.content-label {
+    -fx-text-fill: #333;
+    -fx-font-size: 16px;
+}
+
+/* Bottom status bar */
+.status-bar {
+    -fx-background-color: #ddd;
+    -fx-padding: 5;
+}
+.status-bar .label {
+    -fx-text-fill: #333;
+    -fx-font-size: 12px;
+}

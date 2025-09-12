@@ -1,0 +1,29 @@
+/* GridPane root */
+.grid-login {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+}
+
+/* Labels */
+.label-field {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* TextFields and PasswordFields */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+}
+
+/* Button */
+.login-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15 5 15;
+    -fx-background-radius: 5;
+}
+.login-button:hover {
+    -fx-background-color: #1976d2;
+}

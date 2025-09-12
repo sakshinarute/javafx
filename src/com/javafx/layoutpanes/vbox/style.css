@@ -1,0 +1,18 @@
+/* Styles for VBox */
+.login-box {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+}
+
+/* Styles for the title label */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Optional: Style for the button */
+.login-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

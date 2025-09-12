@@ -1,0 +1,58 @@
+/* Side Menu */
+.side-menu {
+    -fx-background-color: #eeeeee;
+    -fx-padding: 20;
+}
+.menu-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-pref-width: 120;
+}
+.menu-button:hover {
+    -fx-background-color: #1976d2;
+}
+
+/* Grid Login Form */
+.grid-login {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+}
+.label-field {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+}
+.login-button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 5 15 5 15;
+}
+.login-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+/* Info Pane */
+.info-pane {
+    -fx-background-color: #fafafa;
+    -fx-padding: 20;
+}
+.info-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #333333;
+}
+.status-label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
