@@ -1,0 +1,43 @@
+/* Form title */
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a73cc;
+}
+
+/* Live preview label */
+.preview-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #444;
+}
+
+/* Status label at bottom */
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #2a9d5f;
+}
+
+/* Buttons styling */
+.button {
+    -fx-background-color: #2a73cc;
+    -fx-text-fill: white;
+    -fx-padding: 5 15 5 15;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #1a4c8f;
+}
+
+/* TextField and PasswordField styling */
+.text-field, .password-field {
+    -fx-background-radius: 5;
+    -fx-border-color: lightgray;
+    -fx-padding: 3;
+}
+
+/* Error label (lblErrors) styling */
+#lblErrors {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+}

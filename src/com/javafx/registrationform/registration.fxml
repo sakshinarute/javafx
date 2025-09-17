@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.javafx.registrationform.RegistrationController"
+            prefWidth="700" prefHeight="480">
+
+    <!-- Top menu -->
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem fx:id="menuExit" text="Exit" onAction="#handleExit"/>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem fx:id="menuAbout" text="About" onAction="#handleAbout"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <!-- Center area -->
+    <center>
+        <StackPane fx:id="centerStack">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <children>
+                <GridPane fx:id="formGrid" hgap="12" vgap="12" alignment="CENTER">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="40"/>
+                        <ColumnConstraints percentWidth="60"/>
+                    </columnConstraints>
+
+                    <children>
+                        <!-- Title -->
+                        <Label text="Registration" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                               GridPane.columnSpan="2" styleClass="form-title"/>
+
+                        <!-- Live preview -->
+                        <Label text="Live preview:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblLivePreview" text="(none)" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                               styleClass="preview-label"/>
+
+                        <!-- Full name -->
+                        <Label text="Full name:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtFullName" promptText="Enter full name"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <!-- Email -->
+                        <Label text="Email:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtEmail" promptText="you@example.com"
+                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <!-- Password -->
+                        <Label text="Password:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="txtPassword" promptText="Choose a password"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                        <!-- Gender -->
+                        <Label text="Gender:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                            <children>
+                                <RadioButton fx:id="rbMale" text="Male"/>
+                                <RadioButton fx:id="rbFemale" text="Female"/>
+                                <RadioButton fx:id="rbOther" text="Other"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Country -->
+                        <Label text="Country:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="cbCountry" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                        <!-- Options -->
+                        <Label text="Options:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <CheckBox fx:id="chkSubscribe" text="Receive newsletter"
+                                  GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                        <!-- Buttons -->
+                        <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.rowIndex="8" GridPane.columnIndex="1">
+                            <children>
+                                <Button fx:id="btnClear" text="Clear" onAction="#handleClear"/>
+                                <Button fx:id="btnSubmit" text="Submit" onAction="#handleSubmit"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Validation error messages -->
+                        <Label fx:id="lblErrors"
+                               text=" "
+                               GridPane.rowIndex="9"
+                               GridPane.columnIndex="1"
+                               style="-fx-text-fill: red; -fx-font-size: 12px;"/>
+                    </children>
+                </GridPane>
+            </children>
+        </StackPane>
+    </center>
+
+    <!-- Bottom status -->
+    <bottom>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets top="8" right="8" bottom="8" left="8"/>
+            </padding>
+            <children>
+                <Label fx:id="lblStatus" text="Ready" styleClass="status-label"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
