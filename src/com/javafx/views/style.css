@@ -1,0 +1,37 @@
+.root-pane {
+    -fx-background-color: #f0f0f0;
+}
+
+/* TreeView Styling */
+.side-tree {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3f51b5;
+    -fx-border-width: 0 2 0 0;
+}
+
+/* TableView Styling */
+.main-table {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: #ddd;
+    -fx-font-size: 13px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: white;
+}
+
+/* ListView Styling */
+.side-list {
+    -fx-background-color: #fafafa;
+    -fx-border-color: #3f51b5;
+    -fx-border-width: 0 0 0 2;
+}
+
+/* Status Label */
+.status-label {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: white;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
