@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.javafx.librarymanagement.MainController"
+            prefWidth="900.0" prefHeight="520.0">
+
+    <!-- TOP: Menu + toolbar -->
+    <top>
+        <VBox>
+            <MenuBar>
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem fx:id="menuLoad" text="Load"/>
+                            <MenuItem fx:id="menuSave" text="Save"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem fx:id="menuExit" text="Exit"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Help">
+                        <items>
+                            <MenuItem text="About"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <ToolBar>
+                <items>
+                    <Button fx:id="btnLoad" text="Load"/>
+                    <Button fx:id="btnSave" text="Save"/>
+                    <Separator orientation="VERTICAL"/>
+                    <Label text="Search:"/>
+                    <TextField fx:id="tfSearch" promptText="search by title, author or id"/>
+                </items>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <!-- CENTER: TabPane with Books / Users / Loans -->
+    <center>
+        <TabPane prefWidth="880.0" prefHeight="440.0">
+            <tabs>
+                <!-- Books tab: your original UI with small borrow controls added -->
+                <Tab text="Books">
+                    <content>
+                        <HBox spacing="12.0" alignment="CENTER_LEFT" style="-fx-padding: 12;">
+                            <!-- TableView -->
+                            <TableView fx:id="tableBooks" prefWidth="560.0" prefHeight="380.0">
+                                <columns>
+                                    <TableColumn fx:id="colId" text="ID" prefWidth="60.0"/>
+                                    <TableColumn fx:id="colTitle" text="Title" prefWidth="200.0"/>
+                                    <TableColumn fx:id="colAuthor" text="Author" prefWidth="160.0"/>
+                                    <TableColumn fx:id="colYear" text="Year" prefWidth="70.0"/>
+                                    <TableColumn fx:id="colAvailable" text="Available" prefWidth="70.0"/>
+                                </columns>
+                            </TableView>
+
+                            <!-- Form -->
+                            <VBox spacing="8.0" alignment="TOP_CENTER" style="-fx-padding: 10;" prefWidth="300.0">
+                                <Label text="Book Details" styleClass="header-label"/>
+                                <Label text="Title" />
+                                <TextField fx:id="tfTitle" promptText="Title" />
+                                <Label text="Author" />
+                                <TextField fx:id="tfAuthor" promptText="Author" />
+                                <Label text="Year" />
+                                <TextField fx:id="tfYear" promptText="Year (e.g. 2020)" />
+                                <CheckBox fx:id="cbAvailable" text="Available" selected="true"/>
+
+                                <HBox spacing="8.0">
+                                    <Button fx:id="btnAdd" text="Add" mnemonicParsing="false"/>
+                                    <Button fx:id="btnUpdate" text="Update" mnemonicParsing="false"/>
+                                    <Button fx:id="btnDelete" text="Delete" mnemonicParsing="false"/>
+                                </HBox>
+
+                                <!-- Borrow controls -->
+                                <HBox spacing="8.0" alignment="CENTER_LEFT">
+                                    <Label text="Borrow as:"/>
+                                    <ComboBox fx:id="cbUsersBorrow" prefWidth="160.0" promptText="Select user"/>
+                                    <Button fx:id="btnBorrow" text="Borrow"/>
+                                </HBox>
+
+                                <Separator prefWidth="260"/>
+                                <ProgressBar fx:id="progressBar" prefWidth="260.0" progress="0.0"/>
+                                <Label fx:id="statusLabel" text="Status: Ready"/>
+                            </VBox>
+                        </HBox>
+                    </content>
+                </Tab>
+
+                <!-- Users tab: manage members -->
+                <Tab text="Users">
+                    <content>
+                        <HBox spacing="12.0" alignment="CENTER_LEFT" style="-fx-padding: 12;">
+                            <TableView fx:id="tableUsers" prefWidth="560.0" prefHeight="380.0">
+                                <columns>
+                                    <TableColumn fx:id="colUserId" text="ID" prefWidth="60.0"/>
+                                    <TableColumn fx:id="colUserName" text="Name" prefWidth="260.0"/>
+                                    <TableColumn fx:id="colUserEmail" text="Email" prefWidth="240.0"/>
+                                </columns>
+                            </TableView>
+
+                            <VBox spacing="8.0" alignment="TOP_CENTER" style="-fx-padding: 10;" prefWidth="300.0">
+                                <Label text="User Details" styleClass="header-label"/>
+                                <Label text="Name" />
+                                <TextField fx:id="tfUserName" promptText="Name" />
+                                <Label text="Email" />
+                                <TextField fx:id="tfUserEmail" promptText="Email" />
+
+                                <HBox spacing="8.0">
+                                    <Button fx:id="btnUserAdd" text="Add" mnemonicParsing="false"/>
+                                    <Button fx:id="btnUserUpdate" text="Update" mnemonicParsing="false"/>
+                                    <Button fx:id="btnUserDelete" text="Delete" mnemonicParsing="false"/>
+                                </HBox>
+                            </VBox>
+                        </HBox>
+                    </content>
+                </Tab>
+
+                <!-- Loans tab: show all loans and mark returns -->
+                <Tab text="Loans">
+                    <content>
+                        <VBox spacing="8.0" style="-fx-padding:12;">
+                            <TableView fx:id="tableLoans" prefWidth="840.0" prefHeight="340.0">
+                                <columns>
+                                    <TableColumn fx:id="colLoanId" text="ID" prefWidth="60.0"/>
+                                    <TableColumn fx:id="colLoanBook" text="Book" prefWidth="220.0"/>
+                                    <TableColumn fx:id="colLoanUser" text="User" prefWidth="200.0"/>
+                                    <TableColumn fx:id="colBorrowDate" text="Borrowed" prefWidth="100.0"/>
+                                    <TableColumn fx:id="colDueDate" text="Due" prefWidth="100.0"/>
+                                    <TableColumn fx:id="colReturnDate" text="Returned" prefWidth="100.0"/>
+                                </columns>
+                            </TableView>
+
+                            <HBox spacing="8.0" alignment="CENTER_LEFT">
+                                <Button fx:id="btnReturn" text="Mark Returned"/>
+                                <Label text="(Select a loan then click 'Mark Returned')"/>
+                            </HBox>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <Label text="Demo Training - Library Management" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>
